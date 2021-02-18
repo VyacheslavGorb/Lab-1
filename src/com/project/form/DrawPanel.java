@@ -52,7 +52,7 @@ public class DrawPanel extends JPanel {
         }
     }
 
-    private class DrawMouseMotionAdapter extends MouseMotionAdapter{
+    private class DrawMouseMotionAdapter extends MouseMotionAdapter {
         @Override
         public void mouseDragged(MouseEvent e) {
             super.mouseDragged(e);

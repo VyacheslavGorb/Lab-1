@@ -21,8 +21,7 @@ public class DrawFrame extends JFrame {
         try {
             UIManager.setLookAndFeel(
                     UIManager.createLookAndFeel("Windows"));
-        }
-        catch (UnsupportedLookAndFeelException ignored) {
+        } catch (UnsupportedLookAndFeelException ignored) {
         }
         shapeContainer = new ShapeContainer();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
