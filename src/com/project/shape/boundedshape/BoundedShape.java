@@ -80,7 +80,7 @@ public abstract class BoundedShape extends Shape {
         return startPoint.y;
     }
 
-    protected void normalizeСoordinates() {
+    protected void normalizeCoordinates() {
         if (startPoint.x > endPoint.x) {
             int temp = startPoint.x;
             startPoint.x = endPoint.x;

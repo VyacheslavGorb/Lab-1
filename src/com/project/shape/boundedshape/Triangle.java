@@ -19,7 +19,7 @@ public class Triangle extends BoundedShape {
 
     @Override
     public void draw(Graphics graphics) {
-        normalizeСoordinates();
+        normalizeCoordinates();
         graphics.drawLine(startPoint.x, endPoint.y, startPoint.x + getWidth() / 2, startPoint.y);
         graphics.drawLine(startPoint.x + getWidth() / 2, startPoint.y, endPoint.x, endPoint.y);
         graphics.drawLine(startPoint.x, endPoint.y, endPoint.x, endPoint.y);

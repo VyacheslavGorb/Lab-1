@@ -19,7 +19,7 @@ public class Oval extends BoundedShape {
 
     @Override
     public void draw(Graphics graphics) {
-        normalizeСoordinates();
+        normalizeCoordinates();
         graphics.drawOval(startPoint.x, startPoint.y, getWidth(), getHeight());
     }
 }

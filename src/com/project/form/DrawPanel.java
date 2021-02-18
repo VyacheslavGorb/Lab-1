@@ -12,6 +12,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 public class DrawPanel extends JPanel {
     private Shape currentObject;
@@ -22,6 +23,7 @@ public class DrawPanel extends JPanel {
         super();
         this.shapeContainer = shapeContainer;
         this.addMouseListener(new DrawMouseAdapter());
+        this.addMouseMotionListener(new DrawMouseMotionAdapter());
         this.shapeType = shapeType;
     }
 
@@ -37,41 +39,50 @@ public class DrawPanel extends JPanel {
         @Override
         public void mousePressed(MouseEvent e) {
             currentObject = createChosenShape();
-            currentObject.setStartPoint(new Point(e.getX(), e.getY()));
-            currentObject.setEndPoint(new Point(e.getX(), e.getY()));
+            currentObject.setStartPoint(e.getPoint());
+            currentObject.setEndPoint(e.getPoint());
+            shapeContainer.addShape(currentObject);
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
             super.mouseReleased(e);
-            currentObject.setEndPoint(new Point(e.getX(), e.getY()));
-            shapeContainer.addShape(currentObject);
+            currentObject.setEndPoint(e.getPoint());
             repaint();
         }
+    }
 
-        private Shape createChosenShape() {
-            switch (shapeType.getType()) {
-                case LINE -> {
-                    return new Line();
-                }
+    private class DrawMouseMotionAdapter extends MouseMotionAdapter{
+        @Override
+        public void mouseDragged(MouseEvent e) {
+            super.mouseDragged(e);
+            currentObject.setEndPoint(e.getPoint());
+            repaint();
+        }
+    }
 
-                case OVAL -> {
-                    return new Oval();
-                }
-
-                case TEXT -> {
-                    return new Text("Hello");
-                }
-
-                case TRIANGLE -> {
-                    return new Triangle();
-                }
-
-                default -> {
-                    return new Rectangle();
-                }
-
+    private Shape createChosenShape() {
+        switch (shapeType.getType()) {
+            case LINE -> {
+                return new Line();
             }
+
+            case OVAL -> {
+                return new Oval();
+            }
+
+            case TEXT -> {
+                return new Text("Hello");
+            }
+
+            case TRIANGLE -> {
+                return new Triangle();
+            }
+
+            default -> {
+                return new Rectangle();
+            }
+
         }
     }
 }
