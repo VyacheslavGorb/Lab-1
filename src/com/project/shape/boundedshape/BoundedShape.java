@@ -25,7 +25,7 @@ public abstract class BoundedShape extends Shape {
         initColors();
     }
 
-    private void initColors(){
+    private void initColors() {
         borderWidth = 3;
         borderColor = Color.BLACK;
         isFilled = false;
@@ -64,19 +64,19 @@ public abstract class BoundedShape extends Shape {
         this.fillColor = fillColor;
     }
 
-    public int getHeight(){
-        return startPoint.y - endPoint.y;
+    public int getHeight() {
+        return endPoint.y - startPoint.y;
     }
 
-    public int getWidth(){
-        return startPoint.x - endPoint.x;
+    public int getWidth() {
+        return endPoint.x - startPoint.x;
     }
 
-    public int getX(){
+    public int getX() {
         return startPoint.x;
     }
 
-    public int getY(){
+    public int getY() {
         return startPoint.y;
     }
 }

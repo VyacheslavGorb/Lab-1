@@ -6,6 +6,17 @@ public class Line extends Shape {
     int lineWidth;
     Color lineColor;
 
+    public Line() {
+    }
+
+    public Line(Point startPoint, Point endPoint) {
+        super(startPoint, endPoint);
+    }
+
+    public Line(int x1, int y1, int x2, int y2) {
+        super(x1, y1, x2, y2);
+    }
+
     int getX1() {
         return startPoint.x;
     }
