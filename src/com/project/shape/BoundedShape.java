@@ -3,10 +3,10 @@ package com.project.shape;
 import java.awt.*;
 
 public abstract class BoundedShape extends Shape {
-    private int borderWidth;
-    private Color borderColor;
-    private boolean isFilled;
-    private Color fillColor;
+    protected int borderWidth;
+    protected Color borderColor;
+    protected boolean isFilled;
+    protected Color fillColor;
 
     public BoundedShape() {
         initColors();
