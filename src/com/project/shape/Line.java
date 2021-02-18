@@ -18,23 +18,23 @@ public class Line extends Shape {
     }
 
     int getX1() {
-        return startPoint.x;
+        return firstPoint.x;
     }
 
     int getX2() {
-        return endPoint.x;
+        return secondPoint.x;
     }
 
     int getY1() {
-        return startPoint.y;
+        return firstPoint.y;
     }
 
     int getY2() {
-        return endPoint.y;
+        return secondPoint.y;
     }
 
     @Override
     public void draw(Graphics graphics) {
-        graphics.drawLine(startPoint.x, startPoint.y, endPoint.x, endPoint.y);
+        graphics.drawLine(firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y);
     }
 }

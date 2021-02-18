@@ -1,7 +1,5 @@
 package com.project.shape.boundedshape;
 
-import com.project.shape.boundedshape.BoundedShape;
-
 import java.awt.*;
 
 public class Triangle extends BoundedShape {
@@ -19,9 +17,13 @@ public class Triangle extends BoundedShape {
 
     @Override
     public void draw(Graphics graphics) {
-        normalizeCoordinates();
-        graphics.drawLine(startPoint.x, endPoint.y, startPoint.x + getWidth() / 2, startPoint.y);
-        graphics.drawLine(startPoint.x + getWidth() / 2, startPoint.y, endPoint.x, endPoint.y);
-        graphics.drawLine(startPoint.x, endPoint.y, endPoint.x, endPoint.y);
+        int x1 = Math.min(firstPoint.x, secondPoint.x);
+        int x2 = Math.max(firstPoint.x, secondPoint.x);
+        int y1 = Math.min(firstPoint.y, secondPoint.y);
+        int y2 = Math.max(firstPoint.y, secondPoint.y);
+
+        graphics.drawLine(x1, y2, x1 + getWidth() / 2, y1);
+        graphics.drawLine(x1 + getWidth() / 2, y1, x2, y2);
+        graphics.drawLine(x1, y2, x2, y2);
     }
 }

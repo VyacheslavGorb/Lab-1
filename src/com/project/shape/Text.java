@@ -29,6 +29,6 @@ public class Text extends Shape {
 
     @Override
     public void draw(Graphics graphics) {
-        graphics.drawString(text, startPoint.x, endPoint.y);
+        graphics.drawString(text, firstPoint.x, secondPoint.y);
     }
 }

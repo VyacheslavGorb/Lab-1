@@ -4,43 +4,43 @@ import java.awt.Point;
 import java.awt.Graphics;
 
 public abstract class Shape {
-    protected Point startPoint;
-    protected Point endPoint;
+    protected Point firstPoint;
+    protected Point secondPoint;
 
     public Shape() {
-        startPoint = new Point();
-        endPoint = new Point();
+        firstPoint = new Point();
+        secondPoint = new Point();
     }
 
-    public Shape(Point startPoint, Point endPoint) {
-        this.startPoint = new Point(startPoint);
-        this.endPoint = new Point(endPoint);
+    public Shape(Point firstPoint, Point secondPoint) {
+        this.firstPoint = new Point(firstPoint);
+        this.secondPoint = new Point(secondPoint);
     }
 
     public Shape(int x1, int y1, int x2, int y2) {
-        this.startPoint = new Point(x1, y1);
-        this.endPoint = new Point(x2, y2);
+        this.firstPoint = new Point(x1, y1);
+        this.secondPoint = new Point(x2, y2);
     }
 
     public boolean isShapeCoordinate(int x, int y) {
-        return ((x >= startPoint.x) && (x <= endPoint.x))
-                && ((y >= startPoint.y) && (y <= endPoint.y));
+        return ((x >= firstPoint.x) && (x <= secondPoint.x))
+                && ((y >= firstPoint.y) && (y <= secondPoint.y));
     }
 
-    public Point getStartPoint() {
-        return startPoint;
+    public Point getFirstPoint() {
+        return firstPoint;
     }
 
-    public void setStartPoint(Point startPoint) {
-        this.startPoint = startPoint;
+    public void setFirstPoint(Point firstPoint) {
+        this.firstPoint = firstPoint;
     }
 
-    public Point getEndPoint() {
-        return endPoint;
+    public Point getSecondPoint() {
+        return secondPoint;
     }
 
-    public void setEndPoint(Point endPoint) {
-        this.endPoint = endPoint;
+    public void setSecondPoint(Point secondPoint) {
+        this.secondPoint = secondPoint;
     }
 
     public abstract void draw(Graphics graphics);

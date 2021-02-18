@@ -17,7 +17,9 @@ public class Rectangle extends BoundedShape {
 
     @Override
     public void draw(Graphics graphics) {
-        normalizeCoordinates();
-        graphics.drawRect(startPoint.x, startPoint.y, getWidth(), getHeight());
+        graphics.drawOval(Math.min(firstPoint.x, secondPoint.x),
+                Math.min(firstPoint.y, secondPoint.y),
+                getWidth(),
+                getHeight());
     }
 }

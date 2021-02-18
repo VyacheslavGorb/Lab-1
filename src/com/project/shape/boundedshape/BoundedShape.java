@@ -32,6 +32,17 @@ public abstract class BoundedShape extends Shape {
         fillColor = Color.WHITE;
     }
 
+    @Override
+    public boolean isShapeCoordinate(int x, int y) {
+        int x1 = Math.min(firstPoint.x, secondPoint.x);
+        int x2 = Math.max(firstPoint.x, secondPoint.x);
+        int y1 = Math.min(firstPoint.y, secondPoint.y);
+        int y2 = Math.max(firstPoint.y, secondPoint.y);
+
+        return ((x >= x1) && (x <= x2))
+                && ((y >= y1) && (y <= y2));
+    }
+
     public int getBorderWidth() {
         return borderWidth;
     }
@@ -65,31 +76,18 @@ public abstract class BoundedShape extends Shape {
     }
 
     public int getHeight() {
-        return endPoint.y - startPoint.y;
+        return Math.abs(secondPoint.y - firstPoint.y);
     }
 
     public int getWidth() {
-        return endPoint.x - startPoint.x;
+        return Math.abs(secondPoint.x - firstPoint.x);
     }
 
     public int getX() {
-        return startPoint.x;
+        return firstPoint.x;
     }
 
     public int getY() {
-        return startPoint.y;
-    }
-
-    protected void normalizeCoordinates() {
-        if (startPoint.x > endPoint.x) {
-            int temp = startPoint.x;
-            startPoint.x = endPoint.x;
-            endPoint.x = temp;
-        }
-        if (startPoint.y > endPoint.y) {
-            int temp = startPoint.y;
-            startPoint.y = endPoint.y;
-            endPoint.y = temp;
-        }
+        return firstPoint.y;
     }
 }

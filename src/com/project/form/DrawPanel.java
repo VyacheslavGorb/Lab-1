@@ -39,15 +39,15 @@ public class DrawPanel extends JPanel {
         @Override
         public void mousePressed(MouseEvent e) {
             currentObject = createChosenShape();
-            currentObject.setStartPoint(e.getPoint());
-            currentObject.setEndPoint(e.getPoint());
+            currentObject.setFirstPoint(e.getPoint());
+            currentObject.setSecondPoint(e.getPoint());
             shapeContainer.addShape(currentObject);
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
             super.mouseReleased(e);
-            currentObject.setEndPoint(e.getPoint());
+            currentObject.setSecondPoint(e.getPoint());
             repaint();
         }
     }
@@ -56,7 +56,7 @@ public class DrawPanel extends JPanel {
         @Override
         public void mouseDragged(MouseEvent e) {
             super.mouseDragged(e);
-            currentObject.setEndPoint(e.getPoint());
+            currentObject.setSecondPoint(e.getPoint());
             repaint();
         }
     }

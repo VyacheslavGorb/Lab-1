@@ -28,13 +28,13 @@ public class DrawFrame extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(600, 400);
         this.setContentPane(mainPanel);
-        setButtonActionListners();
+        setButtonActionListeners();
         currentShapeType = new ShapeType(ShapeType.Shapes.RECTANGLE);
         mainPanel.add(new DrawPanel(shapeContainer, currentShapeType));
         this.setVisible(true);
     }
 
-    private void setButtonActionListners() {
+    private void setButtonActionListeners() {
         bRect.addActionListener(createActionListener(ShapeType.Shapes.RECTANGLE));
         bLine.addActionListener(createActionListener(ShapeType.Shapes.LINE));
         bTriangle.addActionListener(createActionListener(ShapeType.Shapes.TRIANGLE));
