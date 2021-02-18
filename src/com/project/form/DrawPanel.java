@@ -38,6 +38,7 @@ public class DrawPanel extends JPanel {
         public void mousePressed(MouseEvent e) {
             currentObject = createChosenShape();
             currentObject.setStartPoint(new Point(e.getX(), e.getY()));
+            currentObject.setEndPoint(new Point(e.getX(), e.getY()));
         }
 
         @Override
