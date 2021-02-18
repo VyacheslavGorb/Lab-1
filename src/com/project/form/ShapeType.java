@@ -16,7 +16,7 @@ public class ShapeType {
         this.type = shape;
     }
 
-    private enum Shapes {
+    public enum Shapes {
         RECTANGLE, OVAL, TRIANGLE, LINE, TEXT;
     }
 }

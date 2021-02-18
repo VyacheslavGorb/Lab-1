@@ -1,11 +1,10 @@
 package com.project.form;
 
-import com.project.shape.Line;
-import com.project.shape.Shape;
 import com.project.shape.ShapeContainer;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class DrawFrame extends JFrame {
 
@@ -23,9 +22,26 @@ public class DrawFrame extends JFrame {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(600, 400);
         this.setContentPane(mainPanel);
-        mainPanel.add(new DrawPanel(shapeContainer));
+        setButtonActionListners();
+        currentShapeType = new ShapeType(ShapeType.Shapes.RECTANGLE);
+        mainPanel.add(new DrawPanel(shapeContainer, currentShapeType));
         this.setVisible(true);
-//        currentShapeType = ShapeType.RECTANGLE;
+    }
+
+    private void setButtonActionListners(){
+        bRect.addActionListener(createActionListener(ShapeType.Shapes.RECTANGLE));
+        bLine.addActionListener(createActionListener(ShapeType.Shapes.LINE));
+        bTriangle.addActionListener(createActionListener(ShapeType.Shapes.TRIANGLE));
+        bOval.addActionListener(createActionListener(ShapeType.Shapes.OVAL));
+    }
+
+    private ActionListener createActionListener(ShapeType.Shapes type){
+        return new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                currentShapeType.setType(type);
+            }
+        };
     }
 
 
