@@ -22,5 +22,10 @@ public abstract class Shape {
         this.endPoint = new Point(x2, y2);
     }
 
+    public boolean isShapeCoordinate(int x, int y) {
+        return ((x >= startPoint.x) && (x <= endPoint.x))
+                && ((y >= startPoint.y) && (y <= endPoint.y));
+    }
+
     public abstract void draw(Graphics graphics);
 }
