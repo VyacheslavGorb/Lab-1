@@ -18,6 +18,12 @@ public class DrawFrame extends JFrame {
     private ShapeType currentShapeType;
 
     public DrawFrame() {
+        try {
+            UIManager.setLookAndFeel(
+                    UIManager.createLookAndFeel("Windows"));
+        }
+        catch (UnsupportedLookAndFeelException ignored) {
+        }
         shapeContainer = new ShapeContainer();
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(600, 400);
@@ -42,10 +48,5 @@ public class DrawFrame extends JFrame {
                 currentShapeType.setType(type);
             }
         };
-    }
-
-
-    public static void main(String[] args) {
-        var frame = new DrawFrame();
     }
 }
