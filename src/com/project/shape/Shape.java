@@ -27,5 +27,21 @@ public abstract class Shape {
                 && ((y >= startPoint.y) && (y <= endPoint.y));
     }
 
+    public Point getStartPoint() {
+        return startPoint;
+    }
+
+    public void setStartPoint(Point startPoint) {
+        this.startPoint = startPoint;
+    }
+
+    public Point getEndPoint() {
+        return endPoint;
+    }
+
+    public void setEndPoint(Point endPoint) {
+        this.endPoint = endPoint;
+    }
+
     public abstract void draw(Graphics graphics);
 }
