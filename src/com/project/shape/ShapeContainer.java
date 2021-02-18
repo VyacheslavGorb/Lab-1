@@ -18,7 +18,7 @@ public class ShapeContainer {
         shapeList.remove(shape);
     }
 
-    public List<Shape> getShapeList(){
+    public List<Shape> getShapeList() {
         return new LinkedList<Shape>(shapeList);
     }
 }

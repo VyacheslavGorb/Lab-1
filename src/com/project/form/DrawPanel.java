@@ -56,7 +56,7 @@ public class DrawPanel extends JPanel {
                 }
 
                 case OVAL -> {
-                    return  new Oval();
+                    return new Oval();
                 }
 
                 case TEXT -> {

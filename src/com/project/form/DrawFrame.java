@@ -28,14 +28,14 @@ public class DrawFrame extends JFrame {
         this.setVisible(true);
     }
 
-    private void setButtonActionListners(){
+    private void setButtonActionListners() {
         bRect.addActionListener(createActionListener(ShapeType.Shapes.RECTANGLE));
         bLine.addActionListener(createActionListener(ShapeType.Shapes.LINE));
         bTriangle.addActionListener(createActionListener(ShapeType.Shapes.TRIANGLE));
         bOval.addActionListener(createActionListener(ShapeType.Shapes.OVAL));
     }
 
-    private ActionListener createActionListener(ShapeType.Shapes type){
+    private ActionListener createActionListener(ShapeType.Shapes type) {
         return new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
