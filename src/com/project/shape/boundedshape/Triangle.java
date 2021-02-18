@@ -1,4 +1,6 @@
-package com.project.shape;
+package com.project.shape.boundedshape;
+
+import com.project.shape.boundedshape.BoundedShape;
 
 import java.awt.*;
 

@@ -1,4 +1,6 @@
-package com.project.shape;
+package com.project.shape.boundedshape;
+
+import com.project.shape.Shape;
 
 import java.awt.*;
 
@@ -9,6 +11,7 @@ public abstract class BoundedShape extends Shape {
     protected Color fillColor;
 
     public BoundedShape() {
+        super();
         initColors();
     }
 
